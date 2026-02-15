@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Compile C++ file
-        run: g++ -std=c++20 -03 --march=native main.cpp -o main 
+        run: g++ -std=c++20 -03 -march=native main.cpp -o main 
 
       - name: Run executable 
         run: ./main
