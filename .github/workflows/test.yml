@@ -1,0 +1,21 @@
+name: test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compile C++ file
+        run: g++ -std=c++20 -03 --march=native main.cpp -o main 
+
+      - name: Run executable 
+        run: ./main
